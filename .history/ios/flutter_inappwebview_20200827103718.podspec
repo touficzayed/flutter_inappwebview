@@ -14,10 +14,10 @@ A new Flutter plugin.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.resources = 'Storyboards/**/*.storyboard'
+  s.resources = 'Storyboards/**/*.storyboard', 'Js/jsWKWebViewRTC.js'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'WKWebViewRTC'
+  s.dependency 'Flutter'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.

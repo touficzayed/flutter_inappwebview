@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 import Foundation
 import AVFoundation
-import WKWebViewRTC
 
 typealias OlderClosureType =  @convention(c) (Any, Selector, UnsafeRawPointer, Bool, Bool, Any?) -> Void
 typealias NewerClosureType =  @convention(c) (Any, Selector, UnsafeRawPointer, Bool, Bool, Bool, Any?) -> Void
@@ -456,7 +455,7 @@ public class InAppBrowserWebViewController: UIViewController, FlutterPlugin, UIS
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        WKWebViewRTC(wkwebview: webView, contentController: webView.configuration.userContentController)
+        WKWebViewRTC(wkwebview: containerWebView, contentController: containerWebView.configuration.userContentController)
         
         urlField.delegate = self
         urlField.text = self.initURL?.absoluteString

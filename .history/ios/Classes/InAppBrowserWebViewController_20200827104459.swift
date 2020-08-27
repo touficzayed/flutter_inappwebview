@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 import Foundation
 import AVFoundation
-import WKWebViewRTC
 
 typealias OlderClosureType =  @convention(c) (Any, Selector, UnsafeRawPointer, Bool, Bool, Any?) -> Void
 typealias NewerClosureType =  @convention(c) (Any, Selector, UnsafeRawPointer, Bool, Bool, Bool, Any?) -> Void
