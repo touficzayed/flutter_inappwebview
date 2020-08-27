@@ -455,8 +455,6 @@ public class InAppBrowserWebViewController: UIViewController, FlutterPlugin, UIS
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        WKWebViewRTC(wkwebview: self.webView, contentController: self.webView.configuration.userContentController)
         
         urlField.delegate = self
         urlField.text = self.initURL?.absoluteString
