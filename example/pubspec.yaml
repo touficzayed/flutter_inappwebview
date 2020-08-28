@@ -10,8 +10,8 @@ description: Demonstrates how to use the flutter_inappwebview plugin.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
-  flutter: ">=1.10.0 <2.0.0"
+  sdk: '>=2.0.0-dev.68.0 <3.0.0'
+  flutter: '>=1.10.0 <2.0.0'
 
 dependencies:
   flutter:
@@ -29,7 +29,7 @@ dependencies:
     path: ../
 
 dev_dependencies:
-  e2e: "^0.2.0"
+  e2e: '^0.2.0'
   flutter_driver:
     sdk: flutter
   test: any
@@ -39,7 +39,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -50,6 +49,7 @@ flutter:
     - assets/page-1.html
     - assets/page-2.html
     - assets/js/
+    - assets/js/src/
     - assets/css/
     - assets/images/
     - assets/favicon.ico
@@ -61,6 +61,7 @@ flutter:
     - test_assets/in_app_webview_on_console_message_test.html
     - test_assets/in_app_webview_on_create_window_test.html
     - test_assets/in_app_webview_on_js_dialog_test.html
+    - test_assets/in_app_webview_on_get_user_media_test.html
     - test_assets/css/
     - test_assets/images/
     - test_assets/favicon.ico

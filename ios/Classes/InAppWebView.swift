@@ -8,6 +8,7 @@
 import Flutter
 import Foundation
 import WebKit
+import WKWebViewRTC
 
 func currentTimeInMilliSeconds() -> Int64 {
     let currentDate = Date()
@@ -887,6 +888,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
         self.longPressRecognizer = UILongPressGestureRecognizer()
         self.longPressRecognizer!.delegate = self
         self.longPressRecognizer!.addTarget(self, action: #selector(longPressGestureDetected))
+        WKWebViewRTC(wkwebview: self, contentController: IABController)
     }
     
     override public var frame: CGRect {
