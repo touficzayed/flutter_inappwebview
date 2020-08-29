@@ -888,7 +888,6 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
         self.longPressRecognizer = UILongPressGestureRecognizer()
         self.longPressRecognizer!.delegate = self
         self.longPressRecognizer!.addTarget(self, action: #selector(longPressGestureDetected))
-        WKWebViewRTC(wkwebview: self, contentController: IABController)
     }
     
     override public var frame: CGRect {

@@ -7,6 +7,7 @@
 
 import Foundation
 import WebKit
+import WKWebViewRTC
 
 public class FlutterWebViewController: FlutterMethodCallDelegate, FlutterPlatformView {
     
@@ -109,6 +110,7 @@ public class FlutterWebViewController: FlutterMethodCallDelegate, FlutterPlatfor
             let arguments: [String: Any] = ["uuid": viewId]
             channel!.invokeMethod("onHeadlessWebViewCreated", arguments: arguments)
         }
+        WKWebViewRTC(wkwebview: webView, contentController: preWebviewConfiguration.userContentController)
     }
     
     deinit {
