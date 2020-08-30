@@ -35,16 +35,22 @@ class _ChromeSafariBrowserExampleScreenState
     extends State<ChromeSafariBrowserExampleScreen> {
   @override
   void initState() {
-    widget.browser.addMenuItem(ChromeSafariBrowserMenuItem(id: 1, label: 'Custom item menu 1', action: (url, title) {
-      print('Custom item menu 1 clicked!');
-      print(url);
-      print(title);
-    }));
-    widget.browser.addMenuItem(ChromeSafariBrowserMenuItem(id: 2, label: 'Custom item menu 2', action: (url, title) {
-      print('Custom item menu 2 clicked!');
-      print(url);
-      print(title);
-    }));
+    widget.browser.addMenuItem(ChromeSafariBrowserMenuItem(
+        id: 1,
+        label: 'Custom item menu 1',
+        action: (url, title) {
+          print('Custom item menu 1 clicked!');
+          print(url);
+          print(title);
+        }));
+    widget.browser.addMenuItem(ChromeSafariBrowserMenuItem(
+        id: 2,
+        label: 'Custom item menu 2',
+        action: (url, title) {
+          print('Custom item menu 2 clicked!');
+          print(url);
+          print(title);
+        }));
     super.initState();
   }
 
@@ -60,13 +66,17 @@ class _ChromeSafariBrowserExampleScreenState
           child: RaisedButton(
               onPressed: () async {
                 await widget.browser.open(
-                    url: "https://flutter.dev/",
+                    url:
+                        "https://webrtc.github.io/samples/src/content/getusermedia/audio/",
                     options: ChromeSafariBrowserClassOptions(
-                        android: AndroidChromeCustomTabsOptions(addDefaultShareMenuItem: false, keepAliveEnabled: true),
+                        android: AndroidChromeCustomTabsOptions(
+                            addDefaultShareMenuItem: false,
+                            keepAliveEnabled: true),
                         ios: IOSSafariOptions(
-                            dismissButtonStyle: IOSSafariDismissButtonStyle.CLOSE,
-                            presentationStyle: IOSUIModalPresentationStyle.OVER_FULL_SCREEN
-                        )));
+                            dismissButtonStyle:
+                                IOSSafariDismissButtonStyle.CLOSE,
+                            presentationStyle:
+                                IOSUIModalPresentationStyle.OVER_FULL_SCREEN)));
               },
               child: Text("Open Chrome Safari Browser")),
         ));

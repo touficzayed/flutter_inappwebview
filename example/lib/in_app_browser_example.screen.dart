@@ -87,28 +87,29 @@ class _InAppBrowserExampleScreenState extends State<InAppBrowserExampleScreen> {
         drawer: myDrawer(context: context),
         body: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                    onPressed: () async {
-                      await widget.browser.openFile(
-                          assetFilePath: "assets/index.html",
-                          options: InAppBrowserClassOptions(
-                              inAppWebViewGroupOptions: InAppWebViewGroupOptions(
-                                  crossPlatform: InAppWebViewOptions(
-                            debuggingEnabled: true,
-                            useShouldOverrideUrlLoading: true,
-                            useOnLoadResource: true,
-                          ))));
-                    },
-                    child: Text("Open In-App Browser")),
-                Container(height: 40),
-                RaisedButton(
-                    onPressed: () async {
-                      await InAppBrowser.openWithSystemBrowser(
-                          url: "https://flutter.dev/");
-                    },
-                    child: Text("Open System Browser")),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              RaisedButton(
+                  onPressed: () async {
+                    await widget.browser.openFile(
+                        assetFilePath: "assets/index.html",
+                        options: InAppBrowserClassOptions(
+                            inAppWebViewGroupOptions: InAppWebViewGroupOptions(
+                                crossPlatform: InAppWebViewOptions(
+                          debuggingEnabled: true,
+                          useShouldOverrideUrlLoading: true,
+                          useOnLoadResource: true,
+                        ))));
+                  },
+                  child: Text("Open In-App Browser")),
+              Container(height: 40),
+              RaisedButton(
+                  onPressed: () async {
+                    await InAppBrowser.openWithSystemBrowser(
+                        url:
+                            "https://webrtc.github.io/samples/src/content/getusermedia/audio/");
+                  },
+                  child: Text("Open System Browser")),
             ])));
   }
 }

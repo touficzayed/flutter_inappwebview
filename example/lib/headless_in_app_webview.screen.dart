@@ -10,7 +10,8 @@ class HeadlessInAppWebViewExampleScreen extends StatefulWidget {
       new _HeadlessInAppWebViewExampleScreenState();
 }
 
-class _HeadlessInAppWebViewExampleScreenState extends State<HeadlessInAppWebViewExampleScreen> {
+class _HeadlessInAppWebViewExampleScreenState
+    extends State<HeadlessInAppWebViewExampleScreen> {
   HeadlessInAppWebView headlessWebView;
   String url = "";
 
@@ -19,7 +20,8 @@ class _HeadlessInAppWebViewExampleScreenState extends State<HeadlessInAppWebView
     super.initState();
 
     headlessWebView = new HeadlessInAppWebView(
-      initialUrl: "https://flutter.dev/",
+      initialUrl:
+          "https://webrtc.github.io/samples/src/content/getusermedia/audio/",
       initialOptions: InAppWebViewGroupOptions(
         crossPlatform: InAppWebViewOptions(
           debuggingEnabled: true,
@@ -43,7 +45,8 @@ class _HeadlessInAppWebViewExampleScreenState extends State<HeadlessInAppWebView
           this.url = url;
         });
       },
-      onUpdateVisitedHistory: (InAppWebViewController controller, String url, bool androidIsReload) {
+      onUpdateVisitedHistory: (InAppWebViewController controller, String url,
+          bool androidIsReload) {
         print("onUpdateVisitedHistory $url");
         setState(() {
           this.url = url;
@@ -67,40 +70,40 @@ class _HeadlessInAppWebViewExampleScreenState extends State<HeadlessInAppWebView
         )),
         drawer: myDrawer(context: context),
         body: SafeArea(
-          child: Column(children: <Widget>[
-            Container(
+            child: Column(children: <Widget>[
+          Container(
             padding: EdgeInsets.all(20.0),
             child: Text(
                 "CURRENT URL\n${(url.length > 50) ? url.substring(0, 50) + "..." : url}"),
           ),
           Center(
             child: RaisedButton(
-              onPressed: () async {
-                await headlessWebView.dispose();
-                await headlessWebView.run();
-              },
-              child: Text("Run HeadlessInAppWebView")),
+                onPressed: () async {
+                  await headlessWebView.dispose();
+                  await headlessWebView.run();
+                },
+                child: Text("Run HeadlessInAppWebView")),
           ),
           Center(
             child: RaisedButton(
-              onPressed: () async {
-                try {
-                  await headlessWebView.webViewController.evaluateJavascript(source: """console.log('Here is the message!');""");
-                } on MissingPluginException catch(e) {
-                  print("HeadlessInAppWebView is not running. Click on \"Run HeadlessInAppWebView\"!");
-                }
-              },
-              child: Text("Send console.log message")),
+                onPressed: () async {
+                  try {
+                    await headlessWebView.webViewController.evaluateJavascript(
+                        source: """console.log('Here is the message!');""");
+                  } on MissingPluginException catch (e) {
+                    print(
+                        "HeadlessInAppWebView is not running. Click on \"Run HeadlessInAppWebView\"!");
+                  }
+                },
+                child: Text("Send console.log message")),
           ),
           Center(
             child: RaisedButton(
-              onPressed: () {
-                headlessWebView.dispose();
-              },
-              child: Text("Dispose HeadlessInAppWebView")),
+                onPressed: () {
+                  headlessWebView.dispose();
+                },
+                child: Text("Dispose HeadlessInAppWebView")),
           )
-        ])
-      )
-    );
+        ])));
   }
 }
